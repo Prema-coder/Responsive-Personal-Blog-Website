@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Blog</title>
+  <link rel="icon" href="image/icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <div class="logo">My Blog</div>
+    </div>
+
+    <div class="nav-center">
+      <nav class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <div class="search-wrapper">
+        <input id="topSearch" placeholder="Search posts..." />
+        <div id="autocomplete" class="autocomplete"></div>
+      </div>
+
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+      <button id="hamburger" class="icon-btn hamburger" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1>Welcome to My Blog</h1>
+        <p class="lead">A simple, responsive platform to publish and manage posts.</p>
+
+        <section id="featured" class="featured-card"></section>
+      </div>
+
+      <aside class="hero-right">
+        <div class="author-card widget">
+          <img src="image/girl.jpg" alt="author" class="author-avatar"/>
+          <p class="small">A passionate web-developer and designer. I write about web design, development, and UI/UX.</p>
+        </div>
+
+        <div class="widget">
+          <h4>Subscribe</h4>
+          <input id="subscribeEmail" placeholder="Enter your email" />
+          <button id="subscribeBtn" class="btn">Subscribe</button>
+        </div>
+
+        <div class="widget">
+          <h4>Categories</h4>
+          <div id="categories" class="chip-list"></div>
+        </div>
+
+        <div class="widget">
+          <h4>Tags</h4>
+          <div id="tagsCloud" class="tag-cloud"></div>
+        </div>
+
+        <div class="widget">
+          <h4>Share This</h4>
+          <div class="share-row">
+            <button class="share-btn" data-network="twitter">T</button>
+            <button class="share-btn" data-network="facebook">f</button>
+            <button class="share-btn" data-network="linkedin">in</button>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+
+  <section class="container">
+    <section class="posts" id="postsList"></section>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h4>Search</h4>
+        <input id="sideSearch" placeholder="Search..." />
+      </div>
+
+      <div class="widget">
+        <h4>Recent Posts</h4>
+        <ul id="recentPosts" class="recent-list"></ul>
+      </div>
+
+      <div class="widget">
+        <h4>Trending</h4>
+        <div id="trendingList"></div>
+      </div>
+
+      <div class="widget">
+        <h4>Most Popular</h4>
+        <div id="popularList"></div>
+      </div>
+    </aside>
+  </section>
+
+  <div class="load-more-wrap">
+    <button id="loadMore" class="btn">Load more</button>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 My Blog. All rights reserved.</p>
+  </footer>
+
+  <button id="scrollTop" class="scroll-top" title="Back to top">↑</button>
+
+  <div id="postModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">✕</button>
+      <article id="modalPost"></article>
+
+      <section class="post-meta">
+        <div class="actions">
+          <button id="likeBtn" class="btn">👏 <span id="likeCount">0</span></button>
+          <span class="views">Views: <strong id="viewCount">0</strong></span>
+        </div>
+      </section>
+
+      <section class="comments widget">
+        <h4>Comments</h4>
+        <div id="commentsList"></div>
+        <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+        <button id="postComment" class="btn">Post comment</button>
+      </section>
+
+      <section class="related widget">
+        <h4>Related Posts</h4>
+        <div id="relatedPosts"></div>
+      </section>
+    </div>
+  </div>
+
+  <div id="newsletterPopup" class="modal popup hidden" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="popupClose">✕</button>
+      <h3>Join our newsletter</h3>
+      <p>Get the latest posts and tips in your inbox.</p>
+      <input id="popupEmail" placeholder="Enter your email" />
+      <button id="popupSubscribe" class="btn">Subscribe</button>
+      <div><input id="dontShow" type="checkbox" /> Don't show again</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

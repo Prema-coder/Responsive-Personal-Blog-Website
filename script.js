@@ -39,7 +39,7 @@ const postsData = [
     date: "July 10, 2025",
     author: "Amit Agarwal",
     excerpt: "Enhance the styling of your web projects with powerful CSS techniques.",
-    image: "blog.jpg",
+    image: "https://picsum.photos/id/1019/800/400",
     tags: ["css","featured"],
     category: "Development",
     content: `### CSS Tips\nUse variables, grid, and logical properties.`
@@ -50,7 +50,7 @@ const postsData = [
     date: "August 1, 2025",
     author: "Yang yang",
     excerpt: "A practical guide to responsive web design.",
-    image: "post.jpg",
+    image: "https://picsum.photos/id/1020/800/400",
     tags: ["responsive","design"],
     category: "Design",
     content: `Responsive layouts adapt to the viewport.`
